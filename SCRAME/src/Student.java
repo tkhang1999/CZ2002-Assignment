@@ -1,18 +1,19 @@
+import java.util.List;
+import java.util.ArrayList;
 
-public class Students {
+public class Student {
 
-    private int studentID;
     private String studentName;
-
+    private int studentID;
 
     //CONSTRUCTOR
 
     /**
-     * constructor for student
+     * constructor for Students
      * @param studentName name of the student
      * @param studentID identification number of the student
      */
-    public Students (String studentName, int studentID) {
+    public Student (String studentName, int studentID) {
         this.studentName = studentName;
         this.studentID = studentID;
     }
@@ -34,6 +35,5 @@ public class Students {
     public String getStudentName() {
         return studentName;
     }
-
-
+    
 }
