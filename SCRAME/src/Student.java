@@ -1,5 +1,3 @@
-import java.util.List;
-import java.util.ArrayList;
 
 public class Student {
 
@@ -13,7 +11,7 @@ public class Student {
      * @param studentName name of the student
      * @param studentID identification number of the student
      */
-    public Student (String studentName, int studentID) {
+    public Student (int studentID, String studentName) {
         this.studentName = studentName;
         this.studentID = studentID;
     }
@@ -35,5 +33,5 @@ public class Student {
     public String getStudentName() {
         return studentName;
     }
-    
+
 }

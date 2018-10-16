@@ -59,10 +59,18 @@ public class Course {
     public int getProfessorID() {
         return professorID;
     }
+    
+    /**
+     * Retrieves the coordinator ID
+     * @return coordinator ID
+     */
+    public int getCoordinatorID() {
+        return coordinatorID;
+    }
 
     /**
-     * Retrieves the number of coursework for a particular course
-     * @return number of coursework for a particular course
+     * Retrieves the number of courseworks for a particular course
+     * @return number of courseworks for a particular course
      */
     public int getNumCoursework() {
         return numCoursework;
