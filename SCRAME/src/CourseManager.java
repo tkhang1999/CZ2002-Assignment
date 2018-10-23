@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- * Manage course information
+ * Control logic of handling course information
  */
 public class CourseManager {
 	
@@ -19,13 +19,34 @@ public class CourseManager {
 	}
 	
     /**
-     * Prints out the course IDs and course names
+     * prints a list of all courses with their respective ID, name and professors.
      */
-    public void printCourseList(){
-        System.out.printf(" ID\tCourse Name\n");
-        for(int i = 0; i<courseList.size(); i++){
-            System.out.printf("%6d\t%-30s\n", courseList.get(i).getCourseID(), courseList.get(i).getCourseName().toUpperCase());
+    public void printCourseList() {
+        //get list of all courses from courseDB
+        List<Course> courseList = getCourseList();
+
+        System.out.printf("%s\t%20s\t%s\n", "CourseID", "Course Name", "ProfessorID");
+
+        for (int i = 0; i < courseList.size(); i++) {
+            System.out.printf("%8d\t%20s\t%11d\n", courseList.get(i).getCourseID(), courseList.get(i).getCourseName(), courseList.get(i).getProfessorID());
         }
+    }
+    
+    /**
+     * Retrieves list of all CourseID
+     * @return list of all CourseID
+     */
+    public int [] getCourseIDList() {
+        //get list of all courses from courseDV
+        List<Course> courseList = getCourseList();
+
+        //new int Array to store courseID
+        int[] courseIDList = new int[courseList.size()];
+
+        //get all CourseIDs
+        for (int i = 0; i < courseList.size(); i++)
+            courseIDList[i] = courseList.get(i).getCourseID();
+        return courseIDList;
     }
     
     /**
@@ -46,7 +67,7 @@ public class CourseManager {
      * Retrieves the capacity for all Sessions of a SessonOption type for a Course
      * @param courseID identification number of the course
      * @param option ENUM value of LECTURE, TUTORIAL, or LABORATORY
-     * @return the number of capacity for the chosen session type
+     * @return the array of capacities for the chosen session type
      */
     public int [] getSessionCapacityByCourseID(int courseID, SessionOption option) {
         // Get Course object using courseID
@@ -99,7 +120,7 @@ public class CourseManager {
      * Retrieves the number of vacancies for all sessions of a SessionOption type for a course
      * @param courseID identification number of the course
      * @param option ENUM value of LECTURE, TUTORIAL, or LABORATORY
-     * @return the number of vacancies for the chosen session type
+     * @return the array of vacancies for the chosen session type
      */
     public int [] getSessionVacancyByCourseID(int courseID, SessionOption option) {
         // Get Course object based on courseID
@@ -172,5 +193,105 @@ public class CourseManager {
 
         //return Exam Weight of Course
         return course.getExamWeight();
+    }
+    
+    // SET METHODS
+    
+    /**
+     * add Course into courseDB after instantiating Course
+     * @param courseID identification number of course
+     * @param courseName name of course
+     * @param professorID identification number of professor
+     * @param capacityLecture maximum number of students this lecture can take
+     * @param capacityTutorial maximum number of students this tutorial can take
+     * @param capacityLab maximum number of students this lab can take
+     */
+    public void addCourse (int courseID, String courseName, int professorID, int [] capacityLecture, int [] capacityTutorial, int [] capacityLab) {
+        //create new Course object
+        Course course = new Course(courseID, courseName,  professorID);
+
+        //add Lectures, add Tutorials and add Labs for new Course
+        course.addLecture(capacityLecture);
+        course.addTutorial(capacityTutorial);
+        course.addLaboratory(capacityLab);
+
+        //pass Course object to courseDB to be added
+        courseList.add(course);
+    }
+    
+    /**
+     * Set vacancy for a Lesson of a Course
+     * @param courseID identification number of course
+     * @param option ENUM value of LECTURE, LAB, TUTORIAL. Represents the difference lesson types.
+     * @param ID identification number of the chosen lecture,lab or tutorial
+     */
+    public void setVacancyByCourseLesson(int courseID, SessionOption option, int ID) {
+
+        //get Course object based on courseID
+        Course course = getCourse(courseID);
+
+        //Choose which Lesson type to set vacancy
+        switch (option) {
+            case LECTURE:   //Lecture
+                course.setLectureVacancy(ID);
+            break;
+
+            case TUTORIAL:  //Tutorial
+                course.setTutorialVacancy(ID);
+            break;
+
+            case LABORATORY:       //Laboratory
+                course.setLaboratoryVacancy(ID);
+            break;
+        }
+    }
+    
+    /**
+     * Sets the component weightage using courseID
+     * @param courseID identification number of the course to set
+     * @param examWeight exam weightage of the course to set
+     * @param courseworkWeight coursework weightage of the course to set
+     */
+    public void setComponentWeightByCourseID(int courseID, double examWeight, double [] courseworkWeight) {
+        //get Course object based on courseID
+        Course course = getCourse(courseID);
+
+        //setComponentWeight for Course
+        course.setComponentWeightage(examWeight, courseworkWeight);
+    }
+    
+    // CHECKING METHODS
+    
+    /**
+     * check whether Course exist in CourseDB
+     * @param courseID identification number of the course to check
+     * @return true if course already exists in database
+     */
+    public boolean isExistingCourse(int courseID) {
+        //get Course object based on courseID
+        Course course = getCourse(courseID);
+
+        //if Course does not exist
+        if ( course == null)
+            return false;
+
+        //if courseID exists
+        return true;
+    }
+
+    /**
+     * check whether Course is ready for registration
+     * @param courseID identification number of the course to check
+     * @return true if course is ready for registration
+     */
+    public boolean isCourseReadyForRegistrationByID(int courseID) {
+        //get Course object based on courseID
+        Course course = getCourse(courseID);
+
+        //if courseID exist AND courseComponents valid
+        if (isExistingCourse(courseID) && course.isCourseComponentsValid())
+            return true;
+
+        return false;
     }
 }

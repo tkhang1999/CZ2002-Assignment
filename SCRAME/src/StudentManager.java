@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 /**
- * control logic
+ * Control logic of handling student information
  */
 public class StudentManager {
 	
@@ -23,7 +23,7 @@ public class StudentManager {
     public void printStudentList(){
         System.out.printf(" ID\tStudent Name\n");
         for(int i = 0; i<studentList.size(); i++){
-            System.out.printf("%6d\t%-30s\n", studentList.get(i).getStudentID(), studentList.get(i).getStudentName().toUpperCase());
+            System.out.printf("%3d\t%-30s\n", studentList.get(i).getStudentID(), studentList.get(i).getStudentName().toUpperCase());
         }
     }
     

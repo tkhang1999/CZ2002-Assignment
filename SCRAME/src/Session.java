@@ -1,5 +1,5 @@
 /**
- * protected variables for subclass access
+ * Protected variables for subclass access
  */
 public class Session {
 
