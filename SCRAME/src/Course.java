@@ -17,7 +17,7 @@ public class Course {
 
     private List<Lecture> lectureList = new ArrayList<Lecture>();
     private List<Tutorial> tutorialList = new ArrayList<Tutorial>();
-    private List<Lab> labList = new ArrayList<Lab>();
+    private List<Laboratory> laboratoryList = new ArrayList<Laboratory>();
 
     /**
      * Default constructor for course
@@ -101,8 +101,6 @@ public class Course {
         return this.lectureList;
     }
 
-    //get the list of tutorials in a particular course
-
     /**
      * Retrieves the list of tutorials of a particular course
      * @return list of tutorials
@@ -111,15 +109,15 @@ public class Course {
         return this.tutorialList;
     }
 
-    //get the list of labs in a particular course
-
     /**
      * Retrieves the list of labs of a particular course
      * @return list of labs
      */
-    public List<Lab> getLabList(){
-        return this.labList;
+    public List<Laboratory> getLaboratoryList(){
+        return this.laboratoryList;
     }
+    
+    // SET METHODS
 
     /**
      * Sets the component weightage
@@ -175,7 +173,7 @@ public class Course {
      * method for addition of labs into the course
      * @param capacity array that stores the number of students allowed to take each particular lab
      */
-    public void addLab(int[] capacity){
+    public void addLaboratory(int[] capacity){
 
         //initializing i to 0 so that it can be used to cycle through the capacity array to know how many labs to be added
         int i = 0;
@@ -184,8 +182,8 @@ public class Course {
         while(i < capacity.length){
 
             //instantiating a new lab and adding it into the lab list
-            Lab newLab = new Lab(i, capacity[i]);
-            labList.add(newLab);
+            Laboratory newLaboratory = new Laboratory(i, capacity[i]);
+            laboratoryList.add(newLaboratory);
             i++;
         }
     }
@@ -194,9 +192,9 @@ public class Course {
      * method to set the vacancies of a particular lab in the lab list
      * @param ID Identification number of the particular lab
      */
-    public void setLabVacancy(int ID){
+    public void setLaboratoryVacancy(int ID){
 
-        labList.get(ID).setVacancies();
+        laboratoryList.get(ID).setVacancies();
 
     }
 
@@ -218,7 +216,7 @@ public class Course {
         lectureList.get(ID).setVacancies();
     }
 
-    //METHODS FOR CHECKING
+    // CHECKING METHOD
 
     /**
      * Checks if the course component values are valid

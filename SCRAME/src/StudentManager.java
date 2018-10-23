@@ -1,11 +1,13 @@
 import java.util.List;
 import java.util.ArrayList;
-
-public class StudentApp {
+/**
+ * control logic
+ */
+public class StudentManager {
 	
 	private List<Student> studentList = new ArrayList<Student>();
 	
-	// GET METHOD
+	// GET METHODS
 	
     /**
      * Retrieve the list of all students
@@ -30,11 +32,11 @@ public class StudentApp {
      * @param student identification number
      * @return student object
      */
-    public Student getStudentByID(int studentID) {
+    public Student getStudent(int studentID) {
     	for (int i=0; i<studentList.size(); i++) {
-    		Student tempStudent = studentList.get(i);
-    		if (tempStudent.getStudentID() == studentID)
-    			return tempStudent;
+    		Student student = studentList.get(i);
+    		if (student.getStudentID() == studentID)
+    			return student;
     	}
     	return null;
     }
@@ -57,10 +59,11 @@ public class StudentApp {
      * @return true if studentID exists
      */
     public boolean isExistingStudentID(int studentID) {
-    	for (int i=0; i<studentList.size(); i++) {
-    		if (studentList.get(i).getStudentID() == studentID)
-    			return true;
+    	if (getStudent(studentID) != null) {
+    		return true;
     	}
-    	return false;
+    	else {
+    		return false;
+    	}
     }
 }
