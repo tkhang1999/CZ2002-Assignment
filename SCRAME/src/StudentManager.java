@@ -29,8 +29,8 @@ public class StudentManager {
     
     /**
      * Retrieve student information by student ID
-     * @param student identification number
-     * @return student object
+     * @param studentID student identification number
+     * @return student or null
      */
     public Student getStudent(int studentID) {
     	for (int i=0; i<studentList.size(); i++) {
@@ -45,7 +45,8 @@ public class StudentManager {
     
     /**
      * Add student information into the database
-     * @param student identification number, student name
+     * @param studentID student identification number
+     * @param studentName student name
      */
     public void addStudent(int studentID, String studentName) {
     	studentList.add(new Student(studentID, studentName));
@@ -55,7 +56,7 @@ public class StudentManager {
     
     /**
      * Check whether the given student identification number exists in the database
-     * @param student identification number
+     * @param studentID student identification number
      * @return true if studentID exists
      */
     public boolean isExistingStudentID(int studentID) {

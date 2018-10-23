@@ -30,7 +30,7 @@ public class CourseManager {
     
     /**
      * Retrieve course information by course ID
-     * @param course identification number
+     * @param courseID identification number for the course
      * @return course object
      */
     public Course getCourse(int courseID) {

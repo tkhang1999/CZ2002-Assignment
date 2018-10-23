@@ -24,6 +24,7 @@ public class Course {
      * @param courseID identification number of the course
      * @param courseName name of the course
      * @param professorID identification number of the professor
+     * @param coordinatorID identification number of the coordinator
      */
 
     public Course (int courseID, String courseName, int professorID, int coordinatorID) {
