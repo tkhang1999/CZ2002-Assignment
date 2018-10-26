@@ -131,7 +131,7 @@ public class Record {
     
     /**
      * Set the mark of all coursework components
-     * @param courseworktMark mark of all coursework components
+     * @param courseworkMark mark of all coursework components
      */
     public void setCourseworkMark(double[] courseworkMark) {
     	if (this.courseworkMark.length == courseworkMark.length) {
