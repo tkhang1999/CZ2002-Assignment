@@ -1,8 +1,8 @@
 import java.util.List;
 import java.util.ArrayList;
 
-/**
- * Control logic of handling course information
+/*
+ * Logic control of course information
  */
 public class CourseManager {
 	
@@ -11,8 +11,8 @@ public class CourseManager {
 	// GET METHODS
 	
     /**
-     * Retrieve the list of all courses
-     * @return course object list
+     * Get the list of all courses
+     * @return list of course objects
      */
 	public List<Course> getCourseList(){
 		return this.courseList;
@@ -33,7 +33,7 @@ public class CourseManager {
     }
     
     /**
-     * Retrieves list of all CourseID
+     * Get the list of all CourseID
      * @return list of all CourseID
      */
     public int [] getCourseIDList() {
@@ -50,7 +50,7 @@ public class CourseManager {
     }
     
     /**
-     * Retrieve course information by course ID
+     * Get the course information by course ID
      * @param courseID identification number for the course
      * @return course object
      */
@@ -64,7 +64,7 @@ public class CourseManager {
     }
     
     /**
-     * Retrieves the capacity for all Sessions of a SessonOption type for a Course
+     * Get the capacity for all Sessions of a SessonOption type for a Course
      * @param courseID identification number of the course
      * @param option ENUM value of LECTURE, TUTORIAL, or LABORATORY
      * @return the array of capacities for the chosen session type
@@ -117,7 +117,7 @@ public class CourseManager {
     }
     
     /**
-     * Retrieves the number of vacancies for all sessions of a SessionOption type for a course
+     * Get the number of vacancies for all sessions of a SessionOption type for a course
      * @param courseID identification number of the course
      * @param option ENUM value of LECTURE, TUTORIAL, or LABORATORY
      * @return the array of vacancies for the chosen session type
@@ -170,7 +170,7 @@ public class CourseManager {
     }
     
     /**
-     * Retrieves the number of courseworks of a Course
+     * Get the number of courseworks of a Course
      * @param courseID Identification number of the course
      * @return number of courseworks of a course
      */
@@ -183,7 +183,7 @@ public class CourseManager {
     }
     
     /**
-     * Retrieves the Exam Weight of a course
+     * Get the Exam Weight of a course
      * @param courseID Identification number of Course
      * @return Exam weightage of a given courseID
      */
@@ -198,7 +198,7 @@ public class CourseManager {
     // SET METHODS
     
     /**
-     * add Course into courseDB after instantiating Course
+     * Add Course into courseDB after instantiating Course
      * @param courseID identification number of course
      * @param courseName name of course
      * @param professorID identification number of professor
@@ -247,7 +247,7 @@ public class CourseManager {
     }
     
     /**
-     * Sets the component weightage using courseID
+     * Set the component weightage using courseID
      * @param courseID identification number of the course to set
      * @param examWeight exam weightage of the course to set
      * @param courseworkWeight coursework weightage of the course to set
@@ -263,7 +263,7 @@ public class CourseManager {
     // CHECKING METHODS
     
     /**
-     * check whether Course exist in CourseDB
+     * Check whether Course exist in CourseDB
      * @param courseID identification number of the course to check
      * @return true if course already exists in database
      */
@@ -280,7 +280,7 @@ public class CourseManager {
     }
 
     /**
-     * check whether Course is ready for registration
+     * Check whether Course is ready for registration
      * @param courseID identification number of the course to check
      * @return true if course is ready for registration
      */

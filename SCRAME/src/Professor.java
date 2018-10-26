@@ -1,4 +1,6 @@
-
+/*
+ * Stores and retrieves professor information
+ */
 public class Professor {
 
     private int professorID;
@@ -7,7 +9,7 @@ public class Professor {
     //CONSTRUCTOR
 
     /**
-     * Constructor for professor
+     * Constructor for Professor
      * @param professorName name of professor
      * @param professorID identification number of professor
      */
@@ -19,7 +21,7 @@ public class Professor {
     //GET METHODS
 
     /**
-     * Retrieves identification number of professor
+     * Get identification number of professor
      * @return professor identification number
      */
     public int getProfessorID() {
@@ -27,7 +29,7 @@ public class Professor {
     }
 
     /**
-     * Retrieves professor name
+     * Get professor name
      * @return professor name
      */
     public String getProfessorName() {

@@ -1,6 +1,8 @@
 import java.util.List;
 import java.util.ArrayList;
-
+/*
+ * Logic control of professor information
+ */
 public class ProfessorManager {
 
 	private List<Professor> professorList = new ArrayList<Professor>();
@@ -8,15 +10,15 @@ public class ProfessorManager {
 	// GET METHODS
 	
     /**
-     * Retrieves list of professors
-     * @return list of professors
+     * Get list of professors
+     * @return list of professor objects
      */
     public List<Professor> getProfessorList(){
         return professorList;
     }
 	
     /**
-     * print out the list of professor IDs and professor names
+     * Print out the list of professor IDs and professor names
      */
     public void printProfessorList(){
         System.out.printf(" ID\tProfessor Name\n");
@@ -26,7 +28,7 @@ public class ProfessorManager {
     }
     
     /**
-     * Retrieve professor information by professorID
+     * Get professor information by professorID
      * @param professorID identification number of professor
      * @return professor object or null
      */
@@ -42,7 +44,7 @@ public class ProfessorManager {
     // SET METHOD
     
     /**
-     * add professor to professorList
+     * Add professor to professorList
      * @param professorName name of the professor
      * @param professorID identification number of the professor
      */
@@ -53,7 +55,7 @@ public class ProfessorManager {
     // CHECKING METHOD
     
     /**
-     * checks if the given professorID already exists in the database
+     * Check whether the given professorID already exists in the database
      * @param professorID identification number of the professor
      * @return true if professorID already exists in database
      */

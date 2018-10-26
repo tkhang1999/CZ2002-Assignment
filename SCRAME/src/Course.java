@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+/*
  * Store and retrieves course information
  */
 public class Course {
@@ -19,8 +19,7 @@ public class Course {
 	private List<Laboratory> laboratoryList = new ArrayList<Laboratory>();
 
 	/**
-	 * Default constructor for course
-	 * 
+	 * Constructor for Course
 	 * @param courseID      identification number of the course
 	 * @param courseName    name of the course
 	 * @param professorID   identification number of the professor
@@ -36,8 +35,7 @@ public class Course {
 	// GET METHODS
 
 	/**
-	 * Retrieves the course ID
-	 * 
+	 * Get the course ID
 	 * @return courseID
 	 */
 	public int getCourseID() {
@@ -45,8 +43,7 @@ public class Course {
 	}
 
 	/**
-	 * Retrieves the course name
-	 * 
+	 * Get the course name
 	 * @return courseName
 	 */
 	public String getCourseName() {
@@ -54,8 +51,7 @@ public class Course {
 	}
 
 	/**
-	 * Retrieves the professor ID
-	 * 
+	 * Get the professor ID
 	 * @return professor ID
 	 */
 	public int getProfessorID() {
@@ -63,8 +59,7 @@ public class Course {
 	}
 
 	/**
-	 * Retrieves the number of courseworks for a particular course
-	 * 
+	 * Get the number of courseworks for a particular course
 	 * @return number of courseworks for a particular course
 	 */
 	public int getNumCoursework() {
@@ -72,8 +67,7 @@ public class Course {
 	}
 
 	/**
-	 * Retrieves the weightage of the exam component of a particular course
-	 * 
+	 * Get the weightage of the exam component of a particular course
 	 * @return weightage of exam for a particular course
 	 */
 	public double getExamWeight() {
@@ -81,8 +75,7 @@ public class Course {
 	}
 
 	/**
-	 * Retrieves the weightage of all the coursework components in the course
-	 * 
+	 * Get the weightage of all the coursework components in the course
 	 * @return weightage of coursework
 	 */
 	public double[] getCourseworkWeight() {
@@ -91,8 +84,7 @@ public class Course {
 	}
 
 	/**
-	 * Retrieves the list of lectures of a particular course
-	 * 
+	 * Get the list of lectures of a particular course
 	 * @return list of lectures
 	 */
 	public List<Lecture> getLectureList() {
@@ -100,8 +92,7 @@ public class Course {
 	}
 
 	/**
-	 * Retrieves the list of tutorials of a particular course
-	 * 
+	 * Get the list of tutorials of a particular course
 	 * @return list of tutorials
 	 */
 	public List<Tutorial> getTutorialList() {
@@ -109,8 +100,7 @@ public class Course {
 	}
 
 	/**
-	 * Retrieves the list of labs of a particular course
-	 * 
+	 * Get the list of labs of a particular course
 	 * @return list of labs
 	 */
 	public List<Laboratory> getLaboratoryList() {
@@ -120,9 +110,8 @@ public class Course {
 	// SET METHODS
 
 	/**
-	 * Sets the component weightage set method for courseManager to call upon to set
+	 * Set the component weightage set method for courseManager to call upon to set
 	 * the weightage of individual components in the course
-	 * 
 	 * @param examWeight       weightage of exam
 	 * @param courseworkWeight weightage of coursework
 	 */
@@ -133,8 +122,7 @@ public class Course {
 	}
 
 	/**
-	 * method for addition of lectures into the course
-	 * 
+	 * Add lectures into the course
 	 * @param capacity array that stores the number of students allowed to take each
 	 *                 particular lecture
 	 */
@@ -156,8 +144,7 @@ public class Course {
 	}
 
 	/**
-	 * method for addition of tutorials into the course
-	 * 
+	 * Add tutorials into the course
 	 * @param capacity array that stores the number of students allowed to take each
 	 *                 particular tutorial
 	 */
@@ -179,8 +166,7 @@ public class Course {
 	}
 
 	/**
-	 * method for addition of labs into the course
-	 * 
+	 * Add laboratories into the course
 	 * @param capacity array that stores the number of students allowed to take each
 	 *                 particular lab
 	 */
@@ -202,8 +188,7 @@ public class Course {
 	}
 
 	/**
-	 * method to set the vacancies of a particular lab in the lab list
-	 * 
+	 * Set the vacancies of a particular laboratory in the lab list
 	 * @param ID Identification number of the particular lab
 	 */
 	public void setLaboratoryVacancy(int ID) {
@@ -213,8 +198,7 @@ public class Course {
 	}
 
 	/**
-	 * method to set the vacancies of a particular tutorial in the tutorial list
-	 * 
+	 * Set the vacancies of a particular tutorial in the tutorial list
 	 * @param ID Identification number of the particular lab
 	 */
 	public void setTutorialVacancy(int ID) {
@@ -224,8 +208,7 @@ public class Course {
 	}
 
 	/**
-	 * method to set the vacancies of a particular lecture in the lecture list
-	 * 
+	 * Set the vacancies of a particular lecture in the lecture list
 	 * @param ID Identification number of the particular lab
 	 */
 	public void setLectureVacancy(int ID) {
@@ -235,8 +218,7 @@ public class Course {
 	// CHECKING METHOD
 
 	/**
-	 * Checks if the course component values are valid
-	 * 
+	 * Check whether the course component values are valid
 	 * @return true if the values are valid
 	 */
 	public boolean isCourseComponentsValid() {

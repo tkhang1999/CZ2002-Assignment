@@ -1,4 +1,6 @@
-
+/*
+ * Stores and retrieves student infomation
+ */
 public class Student {
 
     private String studentName;
@@ -7,7 +9,7 @@ public class Student {
     //CONSTRUCTOR
 
     /**
-     * constructor for Students
+     * Constructor for Student
      * @param studentName name of the student
      * @param studentID identification number of the student
      */
@@ -19,7 +21,7 @@ public class Student {
     //GET METHODS
 
     /**
-     * Retrieves student identification number
+     * Get student identification number
      * @return studentID
      */
     public int getStudentID() {
@@ -27,7 +29,7 @@ public class Student {
     }
 
     /**
-     * Retrieves the student's name for this instance
+     * Get the student's name for this instance
      * @return name of the student
      */
     public String getStudentName() {

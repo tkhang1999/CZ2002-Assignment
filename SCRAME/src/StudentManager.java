@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
-/**
- * Control logic of handling student information
+/*
+ * Logic control of student information
  */
 public class StudentManager {
 	
@@ -10,15 +10,15 @@ public class StudentManager {
 	// GET METHODS
 	
     /**
-     * Retrieve the list of all students
-     * @return student object list
+     * Get the list of all students
+     * @return list of student objects
      */
     public List<Student> getStudentList(){
         return studentList;
     }
     
     /**
-     * Prints out the student IDs and student names
+     * Print out the student IDs and student names
      */
     public void printStudentList(){
         System.out.printf(" ID\tStudent Name\n");
@@ -28,7 +28,7 @@ public class StudentManager {
     }
     
     /**
-     * Retrieve student information by student ID
+     * Get student information by student ID
      * @param studentID student identification number
      * @return student or null
      */
