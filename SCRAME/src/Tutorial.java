@@ -1,4 +1,6 @@
-
+/**
+ * Tutorial class
+ */
 public class Tutorial extends Session {
 
     //CONSTRUCTOR

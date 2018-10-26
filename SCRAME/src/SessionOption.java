@@ -1,5 +1,5 @@
 /**
- * enumeration for different types of Sessions
+ * Enumeration for different types of Sessions
  */
 public enum SessionOption {
     LECTURE {   //Lecture type

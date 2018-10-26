@@ -1,5 +1,5 @@
-/*
- * Stores and retrieves professor information
+/**
+ * Store and get professor information
  */
 public class Professor {
 

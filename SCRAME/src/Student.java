@@ -1,5 +1,5 @@
-/*
- * Stores and retrieves student infomation
+/**
+ * Store and get student information
  */
 public class Student {
 

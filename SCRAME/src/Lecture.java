@@ -1,4 +1,6 @@
-
+/**
+ * Lecture class
+ */
 public class Lecture extends Session {
 
     //CONSTRUCTOR

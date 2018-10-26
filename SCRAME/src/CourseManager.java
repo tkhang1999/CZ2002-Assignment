@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 
-/*
+/**
  * Logic control of course information
  */
 public class CourseManager {

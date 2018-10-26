@@ -1,5 +1,5 @@
-/*
- * Stores and retrieves record data
+/**
+ * Store and get record information
  */
 public class Record {
 	

@@ -1,8 +1,9 @@
 /**
- * Protected variables for subclass access
+ * Store and get Session information
  */
 public class Session {
 
+	// protected variables for subclass access
     protected int ID;
     protected int capacity;
     protected int vacancies;

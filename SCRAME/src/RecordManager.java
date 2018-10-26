@@ -1,6 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
-/*
+/**
  * Logic control of record information
  */
 public class RecordManager {

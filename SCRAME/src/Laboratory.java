@@ -1,4 +1,6 @@
-
+/**
+ * Laboratory class
+ */
 public class Laboratory extends Session {
 
     //CONSTRUCTOR

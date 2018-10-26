@@ -1,6 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
-/*
+/**
  * Logic control of professor information
  */
 public class ProfessorManager {

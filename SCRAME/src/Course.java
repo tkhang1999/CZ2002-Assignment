@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/*
- * Store and retrieves course information
+/**
+ * Store and get course information
  */
 public class Course {
 
