@@ -289,7 +289,7 @@ public class CourseManager {
         Course course = getCourse(courseID);
 
         //if courseID exist AND courseComponents valid
-        if (isExistingCourse(courseID) && course.isCourseComponentsValid())
+        if (isExistingCourse(courseID) && course.isCourseValid())
             return true;
 
         return false;

@@ -221,7 +221,7 @@ public class Course {
 	 * Check whether the course component values are valid
 	 * @return true if the values are valid
 	 */
-	public boolean isCourseComponentsValid() {
+	public boolean isCourseValid() {
 		if (examWeight != 0 && courseworkWeight != null && numCoursework >= 0) {
 			return true;
 		} else {
