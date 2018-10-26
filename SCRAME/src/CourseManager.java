@@ -220,17 +220,17 @@ public class CourseManager {
     }
     
     /**
-     * Set vacancy for a Lesson of a Course
+     * Set vacancy for a Session of a Course
      * @param courseID identification number of course
-     * @param option ENUM value of LECTURE, LAB, TUTORIAL. Represents the difference lesson types.
+     * @param option ENUM value of LECTURE, LAB, TUTORIAL. Represents the difference Session types.
      * @param ID identification number of the chosen lecture,lab or tutorial
      */
-    public void setVacancyByCourseLesson(int courseID, SessionOption option, int ID) {
+    public void setVacancyByCourseSession(int courseID, SessionOption option, int ID) {
 
         //get Course object based on courseID
         Course course = getCourse(courseID);
 
-        //Choose which Lesson type to set vacancy
+        //Choose which Session type to set vacancy
         switch (option) {
             case LECTURE:   //Lecture
                 course.setLectureVacancy(ID);

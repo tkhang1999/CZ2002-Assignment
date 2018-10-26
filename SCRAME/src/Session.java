@@ -12,8 +12,8 @@ public class Session {
 
     /**
      * initialize vacancy = capacity. No registration yet
-     * @param ID identification number of particular lesson
-     * @param capacity number of students allowed to take this particular lesson
+     * @param ID identification number of particular session
+     * @param capacity number of students allowed to take this particular session
      */
     public Session(int ID, int capacity){
         this.ID = ID;
@@ -23,24 +23,24 @@ public class Session {
 
     //GET METHODS
     /**
-     * Retrieves the number of vacancies for particular lesson
-     * @return number of vacancies for particular lesson
+     * Retrieves the number of vacancies for particular session
+     * @return number of vacancies for particular session
      */
     public int getVacancies(){
         return this.vacancies;
     }
 
     /**
-     * Retrieves the identification number of particular lesson
-     * @return lesson ID
+     * Retrieves the identification number of particular session
+     * @return session ID
      */
     public int getID(){
         return this.ID;
     }
 
     /**
-     * Retrieves capacity of particular lesson
-     * @return lesson capacity
+     * Retrieves capacity of particular session
+     * @return session capacity
      */
     public int getCapacity(){
         return this.capacity;

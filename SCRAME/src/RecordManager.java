@@ -149,7 +149,7 @@ public class RecordManager {
     public int[] getStudentIDListByCourseSession (int courseID, SessionOption SessionOption, int SessionID){
         List<Record> selectedRecords = new ArrayList<>();
 
-        // Traverse through all the records to search for records relating to the course, lesson type and lesson ID
+        // Traverse through all the records to search for records relating to the course, session type and session ID
         for (Record currentRecord : recordList) {
             if (currentRecord.getCourseID() == courseID) {
                 switch (SessionOption) {
