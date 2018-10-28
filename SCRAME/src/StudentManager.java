@@ -52,6 +52,20 @@ public class StudentManager {
     	studentList.add(new Student(studentID, studentName));
     }
     
+    /**
+     * Write the list of students to a .dat file
+     */
+    public void writetStudentList() {
+    	SerializeDB.writeSerializedObject("student.dat", studentList);
+    }
+    
+    /**
+     * Read a the list of students from a .dat file
+     */
+    public void readStudentList() {
+    	studentList = (ArrayList<Student>)SerializeDB.readSerializedObject("student.dat");
+    }
+    
     // CHEKCING METHOD
     
     /**

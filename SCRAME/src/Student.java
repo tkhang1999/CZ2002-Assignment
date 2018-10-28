@@ -1,9 +1,14 @@
+import java.io.Serializable;
 /**
  * Store and get student information
  */
-public class Student {
+public class Student implements Serializable {
 
-    private String studentName;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -279676679609314864L;
+	private String studentName;
     private int studentID;
 
     //CONSTRUCTOR

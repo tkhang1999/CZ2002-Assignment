@@ -1,8 +1,13 @@
+import java.io.Serializable;
 /**
  * Store and get record information
  */
-public class Record {
+public class Record implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6108542310673930092L;
 	private int courseID;
 	private int studentID;
 	

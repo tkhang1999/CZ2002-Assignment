@@ -1,11 +1,16 @@
 import java.util.List;
 import java.util.ArrayList;
-
+import java.io.Serializable;
+import java.io.Serializable;
 /**
  * Logic control of course information
  */
-public class CourseManager {
+public class CourseManager implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2242564156819230125L;
 	private List<Course> courseList = new ArrayList<Course>();
 	
 	// GET METHODS
@@ -258,6 +263,20 @@ public class CourseManager {
 
         //setComponentWeight for Course
         course.setComponentWeightage(examWeight, courseworkWeight);
+    }
+    
+    /**
+     * Write the list of courses to a .dat file
+     */
+    public void writetCourseList() {
+    	SerializeDB.writeSerializedObject("course.dat", courseList);
+    }
+    
+    /**
+     * Read a the list of courses from a .dat file
+     */
+    public void readCourseList() {
+    	courseList = (ArrayList<Course>)SerializeDB.readSerializedObject("course.dat");
     }
     
     // CHECKING METHODS

@@ -1,9 +1,14 @@
+import java.io.Serializable;
 /**
  * Store and get professor information
  */
-public class Professor {
+public class Professor implements Serializable {
 
-    private int professorID;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5064730103652530779L;
+	private int professorID;
     private String professorName;
 
     //CONSTRUCTOR

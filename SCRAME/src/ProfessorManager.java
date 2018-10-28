@@ -52,6 +52,20 @@ public class ProfessorManager {
         professorList.add(new Professor(professorName, professorID));
     }
     
+    /**
+     * Write the list of professors to a .dat file
+     */
+    public void writeProfessorList() {
+    	SerializeDB.writeSerializedObject("professor.dat", professorList);
+    }
+    
+    /**
+     * Read a the list of professors from a .dat file
+     */
+    public void readProfessorList() {
+    	professorList = (ArrayList<Professor>)SerializeDB.readSerializedObject("professor.dat");
+    }
+    
     // CHECKING METHOD
     
     /**

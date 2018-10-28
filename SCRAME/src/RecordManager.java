@@ -315,6 +315,20 @@ public class RecordManager {
         getRecord(courseID, studentID).setExamMark(examMark);
     }
     
+    /**
+     * Write the list of records to a .dat file
+     */
+    public void writetRecordList() {
+    	SerializeDB.writeSerializedObject("record.dat", recordList);
+    }
+    
+    /**
+     * Read a the list of records from a .dat file
+     */
+    public void readRecordList() {
+    	recordList = (ArrayList<Record>)SerializeDB.readSerializedObject("record.dat");
+    }
+    
     // CHECKING METHODS
     
     /**
