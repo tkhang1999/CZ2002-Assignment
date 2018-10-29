@@ -195,7 +195,7 @@ public class RecordManager {
      * @param studentID identification number of student
      * @return the list of coursework marks of a particular student for a particular course
      */
-    public double[] getCourseworkMarksByCourseStudent(int courseID, int studentID){
+    public double[] getCourseworkMarkByCourseStudentID(int courseID, int studentID){
         return getRecord(courseID, studentID).getCourseworkMark();
     }
     
@@ -205,7 +205,7 @@ public class RecordManager {
      * @param studentID identification number of student
      * @return the exam mark of a particular student of a particular course
      */
-    public double getExamMarksByCourseStudent(int courseID, int studentID){
+    public double getExamMarkByCourseStudentID(int courseID, int studentID){
         return getRecord(courseID, studentID).getExamMark();
     }
     
@@ -215,7 +215,7 @@ public class RecordManager {
      * @param studentID identification number of the student
      * @return the overall mark of a particular student for a particular course
      */
-    public double getOverallMarksByCourseStudent(int courseID, int studentID){
+    public double getOverallMarkByCourseStudentID(int courseID, int studentID){
         return getRecord(courseID, studentID).getOverallMark();
     }
     
@@ -225,7 +225,7 @@ public class RecordManager {
      * @param studentID identification number of student
      * @return the grade of particular student in a particular course
      */
-    public String getGradeByCourseStudent(int courseID, int studentID){
+    public String getGradeByCourseStudentID(int courseID, int studentID){
         return getRecord(courseID, studentID).getGrade();
     }
     
@@ -234,7 +234,7 @@ public class RecordManager {
      * @param courseID identification number of course
      * @return the average coursework mark for the course
      */
-    public double getAverageTotalCourseworkMarksByCourseID(int courseID){
+    public double getAverageTotalCourseworkMarkByCourseID(int courseID){
         Record[] courseRecords = getRecordsByCourseID(courseID);
         double sum = 0;
         if(courseRecords == null){
@@ -251,7 +251,7 @@ public class RecordManager {
      * @param courseID identification number of course
      * @return the average exam mark for the course
      */
-    public double getAverageExamMarksByCourseID(int courseID){
+    public double getAverageExamMarkByCourseID(int courseID){
         Record[] courseRecords = getRecordsByCourseID(courseID);
         double sum = 0;
         if(courseRecords == null){
@@ -268,7 +268,7 @@ public class RecordManager {
      * @param courseID identification number of course
      * @return the average overall mark of the course
      */
-    public double getAverageOverallMarksByCourseID(int courseID){
+    public double getAverageOverallMarkByCourseID(int courseID){
         Record[] courseRecords = getRecordsByCourseID(courseID);
         double sum = 0;
         if(courseRecords == null){

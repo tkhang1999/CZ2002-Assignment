@@ -188,6 +188,19 @@ public class CourseManager implements Serializable {
     }
     
     /**
+     * Get all coursework weightage of a particular course
+     * @param courseID course identification number
+     * @return courseworkWeight of all courseworks of a course in a double Array
+     */
+    public double[] getCourseworkWeightByCourseID(int courseID){
+        // Get Course object based on courseID
+        Course course = getCourse(courseID);
+
+        // Return all coursework weight of Course
+        return course.getCourseworkWeight();
+    }
+    
+    /**
      * Get the Exam Weight of a course
      * @param courseID Identification number of Course
      * @return Exam weightage of a given courseID
