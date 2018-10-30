@@ -1,8 +1,13 @@
+import java.io.Serializable;
 /**
  * Store and get Session information
  */
-public class Session {
+public class Session implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3601685529344494294L;
 	// protected variables for subclass access
     protected int ID;
     protected int capacity;
