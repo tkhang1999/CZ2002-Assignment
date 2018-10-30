@@ -946,6 +946,7 @@ public class University{
         }while(!succeed2);
 
         courseManager.setComponentWeightByCourseID(courseID, examWeight, courseworkWeight);
+        courseManager.writetCourseList();
     }
     
     /**
