@@ -1,16 +1,10 @@
 import java.util.List;
 import java.util.ArrayList;
-import java.io.Serializable;
-import java.io.Serializable;
 /**
  * Logic control of course information
  */
-public class CourseManager implements Serializable {
+public class CourseManager {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 2242564156819230125L;
 	private List<Course> courseList = new ArrayList<Course>();
 	
 	// GET METHODS

@@ -18,10 +18,7 @@ public class University{
 	private static RecordManager recordManager = new RecordManager();
 	
 	public static void main (String[] args) {
-//		SerializeDB.writeSerializedObject("student.dat", studentManager.getStudentList());
-//    	SerializeDB.writeSerializedObject("professor.dat", professorManager.getProfessorList());
-//    	SerializeDB.writeSerializedObject("course.dat", courseManager.getCourseList());
-//    	SerializeDB.writeSerializedObject("record.dat", recordManager.getRecordList());
+
 		// Initialize a list of students from a file
 		studentManager.readStudentList();
 		// Initialize a list of professors from a file
@@ -51,6 +48,7 @@ public class University{
             System.out.println(" 13. Print a student's transcript");
             
             System.out.println(" 14. Print a course statistics");
+            System.out.println(" 15. Delete all data in the databse");
             System.out.println("  0. Exit");
             System.out.println();
             System.out.print("Option: ");
@@ -112,6 +110,8 @@ public class University{
                 case 14:
                     printCourseStats();
                     break;
+                case 15:
+                	deleteData();
                 default:
                     System.out.println("That is not a valid choice.");
                     break;
@@ -282,10 +282,6 @@ public class University{
             int[] tutorialCapacity = null;
             int[] labCapacity = null;
 
-            System.out.println("Enter course name");
-            String courseName = sc.nextLine().toUpperCase();
-            // currently assume courseName has no space
-
             // Get the course ID
             do{
                 try {
@@ -305,6 +301,9 @@ public class University{
                 }
             }while(!succeed);
             succeed = false;
+            
+            System.out.println("Enter course name");
+            String courseName = sc.nextLine().toUpperCase();
 
             // Get the professor ID
             do{
@@ -1258,5 +1257,23 @@ public class University{
         System.out.printf("Average Total Coursework Marks: %.1f\n", averageTotalCourseworkMarks);
         
         System.out.println("End of Course Statistics");
+    }
+    
+    /**
+     * Delete all data in the database
+     */
+    private static void deleteData() {
+    	// Write empty ArrayList to the .dat file
+    	List<Student> studentList = new ArrayList<Student>(); 
+		SerializeDB.writeSerializedObject("student.dat", studentList);
+		
+		List<Professor> professorList = new ArrayList<Professor>();
+    	SerializeDB.writeSerializedObject("professor.dat", professorList);
+    	
+    	List<Course> courseList = new ArrayList<Course>();
+    	SerializeDB.writeSerializedObject("course.dat", courseList);
+    	
+    	List<Record> recordList = new ArrayList<Record>();
+    	SerializeDB.writeSerializedObject("record.dat", recordList);
     }
 }
