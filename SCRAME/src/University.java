@@ -112,6 +112,7 @@ public class University{
                     break;
                 case 15:
                 	deleteData();
+                	break;
                 default:
                     System.out.println("That is not a valid choice.");
                     break;
@@ -1266,14 +1267,18 @@ public class University{
     	// Write empty ArrayList to the .dat file
     	List<Student> studentList = new ArrayList<Student>(); 
 		SerializeDB.writeSerializedObject("student.dat", studentList);
+		studentManager.readStudentList();
 		
 		List<Professor> professorList = new ArrayList<Professor>();
     	SerializeDB.writeSerializedObject("professor.dat", professorList);
+    	professorManager.readProfessorList();
     	
     	List<Course> courseList = new ArrayList<Course>();
     	SerializeDB.writeSerializedObject("course.dat", courseList);
+    	courseManager.readCourseList();
     	
     	List<Record> recordList = new ArrayList<Record>();
     	SerializeDB.writeSerializedObject("record.dat", recordList);
+    	recordManager.readRecordList();
     }
 }
