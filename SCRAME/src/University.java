@@ -303,7 +303,9 @@ public class University{
             }while(!succeed);
             succeed = false;
             
+            
             System.out.println("Enter course name");
+            sc.nextLine();
             String courseName = sc.nextLine().toUpperCase();
 
             // Get the professor ID
@@ -1025,6 +1027,16 @@ public class University{
             }
         }while (!succeed);
         succeed = false;
+        
+        // Check whether the record of the studentID and courseID exists
+        try {
+        	if (!recordManager.existingRecord(courseID, studentID))
+        		throw new ExceptionNotSet("Record");
+        }
+        catch (ExceptionNotSet e) {
+        	System.out.println("Student ID " + studentID + " has not regirster in Course ID " + courseID);
+        	return;
+        }
 
         // Set the mark for each component in the course for the student
         do {
@@ -1041,12 +1053,17 @@ public class University{
                         throw new ExceptionInvalidNumber();
                     }
                 }
-                succeed = true;
                 recordManager.setCourseworkMark(courseID, studentID, courseworkMark);
                 recordManager.writetRecordList();
+                succeed = true;
+                System.out.println("Coursework mark of student ID " + studentID + " for course ID " + courseID + " entered");
             } catch (ExceptionInvalidID e) {
                 System.out.println(e.getMessage());
-            } catch (ExceptionInvalidNumber e) {
+            } catch (InputMismatchException e) {
+            	System.out.println("Wrong input type");
+            	sc.nextLine();
+            }
+            catch (ExceptionInvalidNumber e) {
                 System.out.println("Please enter a number from 0 to 100.");
             }
         } while (!succeed);
@@ -1111,6 +1128,16 @@ public class University{
             }
         }while(!succeed);
         succeed = false;
+        
+        // Check whether the record of the studentID and courseID exists
+        try {
+        	if (!recordManager.existingRecord(courseID, studentID))
+        		throw new ExceptionNotSet("Record");
+        }
+        catch (ExceptionNotSet e) {
+        	System.out.println("Student ID " + studentID + " has not regirster in Course ID " + courseID);
+        	return;
+        }
 
         // Set the mark for exam
         do {
@@ -1123,6 +1150,7 @@ public class University{
                 recordManager.setExamMark(courseID, studentID, examMark);
                 recordManager.writetRecordList();
                 succeed = true;
+                System.out.println("Exam mark of student ID " + studentID + " for course ID " + courseID + " entered");
             } catch (InputMismatchException e) {
                 System.out.println("Wrong input type.");
                 sc.nextLine();
